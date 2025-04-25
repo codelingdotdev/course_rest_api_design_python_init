@@ -1,0 +1,29 @@
+name: Run Tests
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout student code
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+            python-version: '3.13'
+
+      - name: Get test binary
+        run: |
+            timestamp=$(date +%s)
+            curl -o cicd_test_binary.tar.gz "https://test-binary.codeling.dev/cicd_test_binary.tar.gz?t=$timestamp" && \
+            tar xzf cicd_test_binary.tar.gz && \
+            chmod +x cicd_test_binary
+
+      - name: Run tests
+        run: ./cicd_test_binary -command test
