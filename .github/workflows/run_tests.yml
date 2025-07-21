@@ -21,4 +21,6 @@ jobs:
             chmod +x cicd_test_binary
 
       - name: Run tests
+        env:
+          variant_id: 863f2d9f-8af5-489a-be84-840a7d031aaf
         run: ./cicd_test_binary -command test
