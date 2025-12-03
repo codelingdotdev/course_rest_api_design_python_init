@@ -4,7 +4,10 @@ This is the student starter repo for the [REST API Design with Python](https://c
 
 ## How to use this repo
 
-1. Fork this repo and clone it to your computer.
+1. Clone this repo:
+    ```
+    git clone https://github.com/codelingdotdev/course_rest_api_design_python_init.git
+    ```
 2. Access the course via the [Codeling Platform](https://app.codeling.dev)
 
 Your course progress will sync to your Codeling account seamlessly.
